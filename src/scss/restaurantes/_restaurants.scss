@@ -1,0 +1,65 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.restaurants{
+    background-color: v.$grisClaro;
+    margin: 4rem 0;
+    padding-bottom: 4rem;
+    &__title{
+        padding: 4rem;
+        text-align: center;
+        margin: 0;
+        color: v.$secundario;
+    }
+}
+
+.restaurants__grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @include m.tablet { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+   
+}
+
+.restaurant{
+    display: grid;
+    grid-template-columns: unset;
+
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$blanco;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 2rem rgba(0, 0, 0, 0.152);
+    
+    img{
+        margin: 0 auto;
+    }
+    &__title{
+        margin: .5rem 0 .8rem 0 ;
+        font-size: 2.5rem;
+        color: v.$primario;
+        text-align: center;
+    }
+
+    &__paragraph{
+        font-size: 1.7rem;
+        line-height: 1.5;
+    }
+
+    @include m.tablet { 
+        grid-template-columns: 1fr 3fr;
+        img{
+            margin: unset;
+        }
+
+        &__title{
+            text-align: start;
+        }
+    }
+}

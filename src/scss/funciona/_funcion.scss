@@ -1,0 +1,43 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.funcion{
+    background-color: v.$primario;
+
+    &__title{
+        text-align: center;
+        color: v.$blanco;
+
+        span{
+            display: block;
+            font-size: 2rem;
+        }
+    }
+
+    &__pasos{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+        
+
+        @include m.tablet { 
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            
+        }
+
+        div{
+            max-width: 45rem;
+        }
+    }
+
+    &__paso{
+        transition: .2s ease;
+        &:hover{
+            transform: scale(1.15) rotate(-5deg);
+        }
+    }
+
+    
+}

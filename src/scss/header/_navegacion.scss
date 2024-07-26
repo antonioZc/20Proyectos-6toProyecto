@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.nav{
+    display: flex;
+    padding: 4rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    @include m.tablet { 
+        justify-content: space-between;
+    align-items: center;
+    }
+
+    &__logo{
+        width: 30rem;
+        
+    }
+
+    &__links{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__link{
+        color: v.$negro;
+        font-weight: 800;
+        font-size: 2rem;
+    }
+
+    &__link--red{
+        color: v.$blanco;
+        background-color: v.$primario;
+        padding: 1rem 2.5rem 1rem 2.5rem;
+        border-radius: 1rem;
+    }
+}

@@ -1,0 +1,53 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.pide{
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr;
+    align-items: end;
+
+    @include m.tablet { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    &__form{
+        background-color: v.$primario;
+        padding: 9rem 5rem;
+        color: v.$blanco;
+
+    }
+
+    &__title{
+        margin-bottom: 9rem;
+        text-align: center;
+    }
+
+    &__campo{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .5rem;
+
+        label{
+            text-transform: uppercase;
+        }
+    }
+
+    &__input{
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    &__cta{
+        display: block;
+        width: 100%;
+        padding: 1.5rem;
+        background-color: v.$secundario;
+        border: none;
+        border-radius: 1rem;
+        color: v.$blanco;
+        margin-top: 2rem;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}

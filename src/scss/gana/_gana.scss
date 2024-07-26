@@ -1,0 +1,45 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.gana{
+    padding-bottom: 10rem;
+    &__title{
+        text-align: center;
+        color: v.$secundario;
+    }
+
+    &__img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+
+        @include m.tablet { 
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__texts{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        p{
+            color: v.$secundario;
+            line-height: 1.5;
+        }
+    }
+
+    &__cta{
+        background-color: v.$primario;
+        color: v.$blanco;
+        padding: 1rem 3rem;
+        border-radius: 1rem;
+        width: max-content;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
